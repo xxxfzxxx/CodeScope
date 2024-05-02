@@ -9,7 +9,7 @@ from google.api_core import retry
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--api_key', default='', type=str)
+    parser.add_argument('--api_key', default='AIzaSyAdqI7LdhIorwaBLtwYTzQ_vW71Bgr_0gY', type=str)
     parser.add_argument('--candidate_num', default=5, type=int)
     parser.add_argument('--temperature', default=0.7, type=float)
     parser.add_argument('--data_load_name', default='program_synthesis_data.jsonl', type=str)
@@ -76,6 +76,17 @@ def add_program_synthesis(example):
 6. Sample explanations: {prob_desc_notes}
 7. Programming language: {lang} 
 8. support programming language version: {env_map[lang]}
+
+Step 1: Understand the problem description and specifications.
+Step 2: Plan the solution based on the problem description and specifications.
+Step 3: Write the code in the {lang} programming language.
+Step 4: Test the code with the sample inputs and outputs.
+Step 5: Refine the code if necessary.
+
+Please note:
+- The code should be ready for execution without any further modifications.
+- Avoid including any redundant analysis or comments in the code.
+- The code should not contain any natural language prefixes or suffixes, such as "Sure, there is the answer...".
 
 Respond should only with a string in the following JSON format:
 [{{"lang": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
