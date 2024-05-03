@@ -1,7 +1,7 @@
 import json
 
 data = []
-with open('./results/program_synthesis_eval_palm.jsonl', 'r') as f:
+with open('./results/program_synthesis_eval_gemini.jsonl', 'r') as f:
     for line in f:
         try:
             data.append(json.loads(line))
@@ -28,7 +28,7 @@ for item in data:
                 continue
 
 # Write the processed data to a new JSONL file
-with open('./results/postprocessed_program_synthesis_palm.jsonl', 'w') as f:
+with open('./results/postprocessed_program_synthesis_gemini.jsonl', 'w') as f:
     for item in processed_data:
         json.dump(item, f)
         f.write('\n')
