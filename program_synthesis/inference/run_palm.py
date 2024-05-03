@@ -88,7 +88,7 @@ Please note:
 - Avoid including any redundant analysis or comments in the code.
 - The code should not contain any natural language prefixes or suffixes, such as "Sure, there is the answer...".
 
-Respond should only with a string in the following JSON format:
+Respond should only with a string in the following JSON format, make sure to include the attribute name:
 [{{"lang": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
     logging.info('problem src_id: ' + str(prob_uid))
@@ -172,4 +172,3 @@ if __name__ == '__main__':
     max_output_tokens = models[0].output_token_limit  # 1024
 
     main()
-
